@@ -25,8 +25,9 @@ cd /tmp/
 rm -rf /tmp/onnx2c \
  && git clone https://github.com/kraiskil/onnx2c.git \
   && cd onnx2c \
-  && git checkout 1d637ab -b build-tmp \
+  && git checkout -b build-tmp \
   && git submodule update --init
+  #&& git checkout 1d637ab -b build-tmp \
 
 mkdir build \
   && cd build \
@@ -39,7 +40,7 @@ mkdir build \
 rm -rf /tmp/esbmc \
   && mkdir -p /tmp/esbmc \
   && cd /tmp/esbmc \
-  && wget https://github.com/esbmc/esbmc/releases/download/v7.0/ESBMC-Linux.sh \
+  && wget https://github.com/esbmc/esbmc/releases/download/v7.2/ESBMC-Linux.sh \
   && bash ESBMC-Linux.sh --exclude-subdir --skip-license \
-  && cp ./bin/esbmc $ESBMC_PATH/. \
+  && sudo cp ./bin/esbmc $ESBMC_PATH/ \
   && rm -rf /tmp/esbmc \
