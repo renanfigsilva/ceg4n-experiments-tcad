@@ -10,7 +10,7 @@ sudo apt install -y \
   curl wget git \
   build-essential cmake make \
   protobuf-compiler libprotobuf-dev \
-  python3 python-pip python-setuptools
+  python3 python3-pip python3-setuptools
 
 # Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
