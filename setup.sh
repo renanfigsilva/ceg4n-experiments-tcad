@@ -10,7 +10,7 @@ sudo apt install -y \
   curl wget git \
   build-essential cmake make \
   protobuf-compiler libprotobuf-dev \
-  python3 python-pip python-setuptools
+  python3 python3-pip python3-setuptools
 
 # Install Poetry
 curl -sSL https://install.python-poetry.org | python3 -
@@ -33,7 +33,7 @@ mkdir build \
   && cd build \
   && cmake .. \
   && make onnx2c \
-  && cp onnx2c $ONNX2C_PATH/. \
+  && cp -v onnx2c "$ONNX2C_PATH/." \
   && cd /tmp \
   && rm -rf onnx2c \
 
@@ -42,5 +42,5 @@ rm -rf /tmp/esbmc \
   && cd /tmp/esbmc \
   && wget https://github.com/esbmc/esbmc/releases/download/v7.2/ESBMC-Linux.sh \
   && bash ESBMC-Linux.sh --exclude-subdir --skip-license \
-  && sudo cp ./bin/esbmc $ESBMC_PATH/ \
+  && sudo cp -v ./bin/esbmc "$ESBMC_PATH/" \
   && rm -rf /tmp/esbmc \
