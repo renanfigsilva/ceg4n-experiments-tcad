@@ -158,3 +158,6 @@ data/output
 results
 results/*
 results/**
+
+# bin folder
+/bin
